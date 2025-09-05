@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdulrahman Web - Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #f1f1f1;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      border-radius: 8px;
+
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #bbb;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #00bcd4;
+      margin-bottom: 20px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      background: #1e1e1e;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .contact {
+      background: #1e1e1e;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .navbar {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+      background-color: #222;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+    }
+
+    .navbar li {
+      margin: 0;
+    }
+
+    .navbar li a {
+      display: block;
+      padding: 14px 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .navbar li a:hover {
+      background-color: #444;
+      color: lightblue;
+      border-radius: 5px;
+      box-shadow: 0 0 15px lightblue,
+        0 0 20px lightblue,
+        0 0 25px lightblue;
+
+    }
+
+
+
+    .about {
+      background: #1e1e1e;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section {
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .img1 {
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      background-image: url(images/profile.jpg);
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+    }
+
+    .imgdiv::before {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      z-index: -1;
+      background: linear-gradient(45deg,
+          #ff0000,
+          #ff7300,
+          #fffb00,
+          #48ff00,
+          #00ffd5,
+          #003bff,
+          #7a00ff,
+          #ff00c8,
+          #ff0000);
+      background-size: 450%;
+      border-radius: 50%;
+      animation: gra 20s linear infinite;
+      filter: blur(5px);
+    }
+
+    @keyframes gra {
+      0% {
+        background-position: 0 0;
+      }
+
+      50% {
+        background-position: 400% 0;
+      }
+
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .imgdiv {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    #home {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 280px;
+      flex-wrap: wrap;
+
+    }
+
+    #toggle {
+      display: none;
+    }
+
+    #hamburger {
+      display: none;
+      font-size: 30px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+
+      }
+
+      #hamburger {
+        display: block;
+      }
+
+      #nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #222;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        border-radius: 5px;
+      }
+
+      #nav-links.active {
+        display: flex;
+      }
+
+      #nav-links li a {
+        padding: 15px;
+        text-align: center;
+      }
+
+      #home {
+        gap: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <h1>Portfolio</h1>
+    <button id="hamburger">☰</button>
+    <ul id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#">Skills</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+  </div>
+  </div>
+
+  <header id="home">
+    <div>
+      <h1>HELLO, I'M <br>AFOLABI ABDULRAHMAN</h1>
+      <h2 id="typing"></h2>
+      <p>I build clean and responsive websites</p>
+    </div>
+    <div class="imgdiv">
+      <div class="img1"></div>
+    </div>
+
+  </header>
+  <section id="about">
+    <h2>About me</h2>
+    <div class="about">
+      <p>Hi, I'm Abdulrahman, a web developer who loves turning ideas into interactive and user-friendly websites. I
+        started my journey with HTML, CSS, and JavaScript, and I'm currently diving deeper into React and modern web
+        development practices.
+
+        I enjoy building projects that not only look good but also solve real problems. Beyond coding, I find
+        inspiration in anime and gaming, which fuel my creativity and problem-solving mindset. My ultimate goal is to
+        grow into a full-stack developer and work on projects that make a difference in people's lives.</p>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Calculator</h3>
+        <a href="https://calculator-bay-one-47.vercel.app/">View project</a>
+      </div>
+      <div class="project">
+        <h3>Calculator</h3>
+        <a href="https://calculator-bay-one-47.vercel.app/">View project</a>
+      </div>
+      <div class="project">
+        <h3>Expense manager</h3>
+        <a href="https://expensemanager-lilac.vercel.app/">View projects</a>
+
+      </div>
+  </section>
+
+  <section>
+    <h2>Contact Me</h2>
+    <div class="contact">
+      <p>Email: <a href="mailto:abdulrahmanafolabi907@gmail.com">abdulrahmanafolabi907@gmail.com</a></p>
+      <p>Phone: <a href="tel:09133048790">09133048790</a></p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Abdulrahman Web. All rights reserved.
+  </footer>
+  <script>
+    const text = "I am a Web Developer";
+    let i = 0;
+
+    function typeEffect() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 100);
+      }
+    };
+
+    window.onload = typeEffect;
+    if (window.location.hash) {
+      history.replaceState(null, null, window.location.pathname);
+    }
+    const toggle = document.getElementById("hamburger")
+    const nav = document.getElementById("nav-links")
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active")
+    })
+    document.querySelectorAll("#nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("active");
+      });
+    });
+  </script>
+
+</body>
+
+</html>
