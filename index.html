@@ -25,9 +25,14 @@
     </div>
 
     <header id="home">
-        <div>
+        <div id="navtxt">
             <h1>HELLO, I'M <br>AFOLABI ABDULRAHMAN</h1>
-            <h2 id="typing"></h2>
+            <h2 class="typing"></h2>
+            <p>I build clean and responsive websites</p>
+        </div>
+        <div id="mobile">
+            <h1>Hello,<br> I'm Afolabi Abdulrahman</h1>
+              <h2 class="typing"></h2>
             <p>I build clean and responsive websites</p>
         </div>
         <div class="imgdiv">
@@ -105,7 +110,9 @@
 
         function typeEffect() {
             if (i < text.length) {
-                document.getElementById("typing").innerHTML += text.charAt(i);
+                document.querySelectorAll(".typing").forEach(el => {
+                    el.innerHTML += text.charAt(i);
+                });
                 i++;
                 setTimeout(typeEffect, 100);
             }
