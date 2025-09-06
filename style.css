@@ -39,7 +39,24 @@
       color: #00bcd4;
       margin-bottom: 20px;
   }
+#typing {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #00bcd4;
+      margin-bottom: 20px;
+  }
 
+
+  #typing::after {
+    content: "|";
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
   .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

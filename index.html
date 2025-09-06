@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdulrahman Web - Portfolio</title>
-   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -27,12 +27,12 @@
     <header id="home">
         <div id="navtxt">
             <h1>HELLO, I'M <br>AFOLABI ABDULRAHMAN</h1>
-            <h2 class="typing"></h2>
+            <h2 id="typing"></h2>
             <p>I build clean and responsive websites</p>
         </div>
         <div id="mobile">
             <h1>Hello,<br> I'm Afolabi Abdulrahman</h1>
-              <h2 class="typing"></h2>
+            <h2 id="typing"></h2>
             <p>I build clean and responsive websites</p>
         </div>
         <div class="imgdiv">
@@ -105,20 +105,41 @@
         &copy; 2025 Abdulrahman Web. All rights reserved.
     </footer>
     <script>
-        const text = "I am a Web Developer";
+        // ---------------------------Typing effect--------------------------
+        const words = ["Web Developer", "Freelancer", "Designer", "Problem Solver"];
         let i = 0;
+        let j = 0;
+        let currentWord = "";
+        let isDeleting = false;
 
         function typeEffect() {
-            if (i < text.length) {
-                document.querySelectorAll(".typing").forEach(el => {
-                    el.innerHTML += text.charAt(i);
-                });
-                i++;
-                setTimeout(typeEffect, 100);
+            const prefix = "I am a ";
+            currentWord = words[i];
+            let displayText = prefix + currentWord.substring(0, j);
+            document.getElementById("typing").innerHTML = displayText;
+
+            if (!isDeleting && j < currentWord.length) {
+                j++;
+                setTimeout(typeEffect, 200);
+            } else if (isDeleting && j > 0) {
+                j--;
+                setTimeout(typeEffect, 200);
+            } else {
+                if (!isDeleting && j === currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(typeEffect, 1000);
+                } else if (isDeleting && j === 0) {
+                    isDeleting = false;
+                    i = (i + 1) % words.length;
+                    setTimeout(typeEffect, 200);
+                }
             }
-        };
+        }
 
         window.onload = typeEffect;
+
+          // ---------------------------Toggle Hamburger--------------------------
+
         if (window.location.hash) {
             history.replaceState(null, null, window.location.pathname);
         }
