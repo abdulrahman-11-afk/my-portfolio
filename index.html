@@ -116,7 +116,7 @@
             const prefix = "I am a ";
             currentWord = words[i];
             let displayText = prefix + currentWord.substring(0, j);
-            document.getElementById("typing").innerHTML = displayText;
+            document.querySelectorAll("#typing").forEach(el => { el.innerHTML = displayText; });
 
             if (!isDeleting && j < currentWord.length) {
                 j++;
