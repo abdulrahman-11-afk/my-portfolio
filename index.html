@@ -153,6 +153,13 @@
                 nav.classList.remove("active");
             });
         });
+         document.addEventListener("click", (e) => {
+            if (nav.classList.contains("active") &&
+                !nav.contains(e.target) &&
+                e.target !== hamburger) {
+                nav.classList.remove("active");
+            }
+        });
     </script>
 
 </body>
