@@ -27,12 +27,12 @@
     <header id="home">
         <div id="navtxt">
             <h1 id="typing"></h1>
-            <h2>A Frontend Developer</h2>
+            <h2 style="color: white;">A Frontend Developer</h2>
             <p>I build clean, responsive and user friendly websites</p>
         </div>
         <div id="mobile">
             <h1 id="typingMobile"></h1>
-              <h2>A Frontend Developer</h2>
+            <h2>A Frontend Developer</h2>
             <p>I build clean and responsive websites</p>
         </div>
 
@@ -40,20 +40,22 @@
     <section id="about">
         <h2>About me</h2>
         <div class="about">
-            <p>Hi, I'm Abdulrahman, a web developer who loves turning ideas into interactive and user-friendly websites.
-                I
-                started my journey with HTML, CSS, and JavaScript, and I'm currently diving deeper into React and modern
-                web
-                development practices.
 
-                I enjoy building projects that not only look good but also solve real problems. Beyond coding, I find
-                inspiration in anime and gaming, which fuel my creativity and problem-solving mindset. My ultimate goal
-                is to
-                grow into a full-stack developer and work on projects that make a difference in people's lives.</p>
+            <p style="letter-spacing:1px ; font-size: larger; text-align: center;">Hi, I'm Abdulrahman, a web developer
+                who loves turning ideas
+                into<br> interactive and user-friendly websites. I started my journey
+                with HTML,<br> CSS, and JavaScript, and I'm currently diving deeper
+                into React and modern <br>web development practices. I enjoy building
+                projects that not only look<br> good but also solve real problems.
+                Beyond coding, I find inspiration in <br>anime and gaming, which fuel
+                my creativity and problem-solving mindset. <br>My ultimate goal is to grow into a full-stack developer
+                and work on <br>projects that make a difference.
+
+            </p>
 
         </div>
     </section>
-    <section id="skills">
+    <section id="skills" text-align: center;>
         <h2>Skills</h2>
         <div class="skills">
             <div class="skill">
@@ -68,23 +70,24 @@
                 <img src="images/java_blue-removebg-preview.png" alt="JavaScript" width="55px" height="60px" />
                 <div>JavaScript</div>
             </div>
-             <div class="skill">
+            <div class="skill">
                 <img src="images/git.png" alt="JavaScript" width="75px" height="80px" />
                 <div>git</div>
             </div>
-             <div class="skill">
+            <div class="skill">
                 <img src="images/github-removebg-preview.png" alt="JavaScript" width="95px" height="70px" />
                 <div>GitHub</div>
             </div>
-             <div class="skill">
+            <div class="skill">
                 <img src="images/React-icon.svg.png" alt="JavaScript" width="55px" height="60px" />
                 <div>React</div>
             </div>
-             <div class="skill">
-                <img src="images/png-transparent-tailwind-css-hd-logo-removebg-preview.png" alt="JavaScript" width="55px" height="60px" />
+            <div class="skill">
+                <img src="images/png-transparent-tailwind-css-hd-logo-removebg-preview.png" alt="JavaScript"
+                    width="55px" height="60px" />
                 <div>Tailwind</div>
             </div>
-             <div class="skill">
+            <div class="skill">
                 <img src="images/res-removebg-preview.png" alt="JavaScript" width="55px" height="60px" />
                 <div>Mobile Responsive</div>
             </div>
@@ -96,15 +99,20 @@
         <div class="projects">
             <div class="project">
                 <h3>Ecommerce website</h3>
-                <a href="https://cart-one-chi.vercel.app/">View project</a>
+                <a href="https://cart-one-chi.vercel.app/" style="text-decoration: none;"><p class="butn">View project</p></a>
             </div>
             <div class="project">
                 <h3>Calculator</h3>
-                <a href="https://calculator-bay-one-47.vercel.app/">View project</a>
+                <a href="https://calculator-bay-one-47.vercel.app/" style="text-decoration: none;"><p class="butn">View project</p></a>
             </div>
             <div class="project">
                 <h3>Expense manager</h3>
-                <a href="https://expensemanager-lilac.vercel.app/">View projects</a>
+                <a href="https://expensemanager-lilac.vercel.app/" style="text-decoration: none;"><p class="butn">View project</p></a>
+
+            </div>
+              <div class="project">
+                <h3>Bank App</h3>
+                <a href="https://expensemanager-lilac.vercel.app/" style="text-decoration: none;"><p class="butn">View project</p></a>
 
             </div>
     </section>
@@ -112,9 +120,7 @@
     <section id="contact">
         <h2>Contact Me</h2>
         <div class="contact">
-            <p>Email: <a href="mailto:abdulrahmanafolabi907@gmail.com">abdulrahmanafolabi907@gmail.com</a></p>
-            <p>Phone: <a href="tel:09133048790">09133048790</a></p>
-            <p>Whatsapp:<a href="https://wa.me/2349133048790">Message me on whatsapp</a> </p>
+           
         </div>
     </section>
 
@@ -122,53 +128,53 @@
         &copy; 2025 Abdulrahman Web. All rights reserved.
     </footer>
     <script>
-    window.onload = function() {
-        // ---------------------------Typing effect--------------------------
-        const text = "Hello, I'm Afolabi Abdulrahman";
-    const typingElements = [
-        document.getElementById("typing"),
-        document.getElementById("typingMobile")
-    ];
+        window.onload = function () {
+            // ---------------------------Typing effect--------------------------
+            const text = "Hello, I'm Afolabi Abdulrahman";
+            const typingElements = [
+                document.getElementById("typing"),
+                document.getElementById("typingMobile")
+            ];
 
-    let index = 0;
+            let index = 0;
 
-    // Clear text before typing
-    typingElements.forEach(el => { if (el) el.textContent = ""; });
+            // Clear text before typing
+            typingElements.forEach(el => { if (el) el.textContent = ""; });
 
-    function type() {
-        if (index < text.length) {
-            typingElements.forEach(el => { 
-                if (el) el.textContent += text.charAt(index); 
-            });
-            index++;
-            setTimeout(type, 100); 
-        }
-    }
-
-    type();
-        // ---------------------------Toggle Hamburger--------------------------
-
-        if (window.location.hash) {
-            history.replaceState(null, null, window.location.pathname);
-        }
-        const toggle = document.getElementById("hamburger")
-        const nav = document.getElementById("nav-links")
-        toggle.addEventListener("click", () => {
-            nav.classList.toggle("active")
-        })
-        document.querySelectorAll("#nav-links a").forEach(link => {
-            link.addEventListener("click", () => {
-                nav.classList.remove("active");
-            });
-        });
-        document.addEventListener("click", (e) => {
-            if (nav.classList.contains("active") &&
-                !nav.contains(e.target) &&
-                e.target !== hamburger) {
-                nav.classList.remove("active");
+            function type() {
+                if (index < text.length) {
+                    typingElements.forEach(el => {
+                        if (el) el.textContent += text.charAt(index);
+                    });
+                    index++;
+                    setTimeout(type, 100);
+                }
             }
-        });
-    }
+
+            type();
+            // ---------------------------Toggle Hamburger--------------------------
+
+            if (window.location.hash) {
+                history.replaceState(null, null, window.location.pathname);
+            }
+            const toggle = document.getElementById("hamburger")
+            const nav = document.getElementById("nav-links")
+            toggle.addEventListener("click", () => {
+                nav.classList.toggle("active")
+            })
+            document.querySelectorAll("#nav-links a").forEach(link => {
+                link.addEventListener("click", () => {
+                    nav.classList.remove("active");
+                });
+            });
+            document.addEventListener("click", (e) => {
+                if (nav.classList.contains("active") &&
+                    !nav.contains(e.target) &&
+                    e.target !== hamburger) {
+                    nav.classList.remove("active");
+                }
+            });
+        }
     </script>
 
 </body>
