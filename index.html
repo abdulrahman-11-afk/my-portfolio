@@ -158,11 +158,13 @@
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <div class="contact">
-            <input class="input" type="text" placeholder="Enter your Name">
-            <input class="input" type="email" placeholder="Enter your Email">
-            <textarea class="input1" placeholder="Enter your message"></textarea>
-        </div>
+        <form class="contact">
+            <input class="input" name="from_name" required type="text" placeholder="Enter your Name">
+            <input class="input" name="from_email" required type="email" placeholder="Enter your Email">
+            <textarea class="input1" name="message" required placeholder="Enter your message"></textarea>
+            <button id="btnform" type="submit">Send Message</button>
+            <p id="status"></p>
+        </form>
 
         <div id="contactform">
             <a href="https://x.com/Abdulrahman907_">
@@ -198,8 +200,16 @@
     <footer>
         &copy; 2025 Abdulrahman Web. All rights reserved.
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <script>
+        (function () {
+            emailjs.init("jv0YAqeaoq9bHxCU"); 
+        })();
         window.onload = function () {
+
+
+
             // ---------------------------Typing effect--------------------------
             const text = "Hello, I'm Afolabi Abdulrahman";
             const typingElements = [
@@ -261,7 +271,18 @@
             cards.forEach(card => observer.observe(card));
 
 
+  document.getElementById("contact").addEventListener("submit", function (e) {
+                e.preventDefault();
 
+                emailjs.sendForm("service_z57jwkq", "YOUR_TEMPLATE_ID", this)
+                    .then(() => {
+                        document.getElementById("status").innerText = "✅ Message sent successfully!";
+                        this.reset();
+                    }, (error) => {
+                        document.getElementById("status").innerText = "❌ Failed to send. Try again!";
+                        console.error("Error:", error);
+                    });
+            });
         }
     </script>
 
